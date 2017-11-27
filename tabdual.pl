@@ -53,8 +53,25 @@ transform(Filename) :-
 	told.
 
 % Predikat top-level: load(OutputProgram)
+% Mode no-table
 load(F) :-
-	concat_atom(['out/', F, '.pl'], FOut),
+	mode(notable), !,
+	concat_atom(['out/', F, '_notab.pl'], FOut),
+	consult(FOut).
+% Mode tabling
+load(F) :-
+	mode(table), !,
+	concat_atom(['out/', F, '_tab.pl'], FOut),
+	consult(FOut).
+% Mode answer subsumption
+load(F) :-
+	mode(subsumed), !,
+	concat_atom(['out/', F, '_sub.pl'], FOut),
+	consult(FOut).
+% Mode intern terms
+load(F) :-
+	mode(interned), !,
+	concat_atom(['out/', F, '_int.pl'], FOut),
 	consult(FOut).
 
 % Predikat top-level untuk abduction: 
@@ -104,8 +121,25 @@ see_input_file(F) :-
 	see(FIn).
 
 % Atur output stream
+% Mode no-tabling
 tell_output_file(F) :-
-	concat_atom(['out/', F, '.pl'], FAb),
+	mode(notable), !,
+	concat_atom(['out/', F, '_notab.pl'], FAb),
+	tell(FAb).
+% Mode tabling
+tell_output_file(F) :-
+	mode(table), !,
+	concat_atom(['out/', F, '_tab.pl'], FAb),
+	tell(FAb).
+% Mode answer subsumption
+tell_output_file(F) :-
+	mode(subsumed), !,
+	concat_atom(['out/', F, '_sub.pl'], FAb),
+	tell(FAb).
+% Mode intern terms
+tell_output_file(F) :-
+	mode(interned), !,
+	concat_atom(['out/', F, '_int.pl'], FAb),
 	tell(FAb).
 
 % ---- Membaca program input ----
