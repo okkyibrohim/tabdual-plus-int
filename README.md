@@ -1,11 +1,11 @@
-# TABDUAL+int : An Improvement of TABDUAL+ by Adding Interned Term
+# TABDUAL+int : An Improvement of TABDUAL+ by Adding Interned Terms
 
 ## About TABDUAL+int
-TABDUAL+int is an improvement of TABDUAL+ (see https://github.com/harventhy/tabdual-plus) by adding an advance feature tabling which is interned term. TABDUAL+int is implemented in XSB Prolog, so you need to be installed XSB Prolog in your machine. For convenience, you might want to put the path to directory where the XSB command is found in your `$PATH` environment variable. Otherwise, you have to include the path to directory where you have this implementation into XSB default search paths using predicate `library_directory/1`.
+TABDUAL+int is an improvement of TABDUAL+ (see https://github.com/harventhy/tabdual-plus) by adding an advance feature tabling which is tabling with interned terms. TABDUAL+int is implemented in XSB Prolog, so you need to be installed XSB Prolog in your machine. For convenience, you might want to put the path to directory where the XSB command is found in your `$PATH` environment variable. Otherwise, you have to include the path to directory where you have this implementation into XSB default search paths using predicate `library_directory/1`.
 
 ## How This Works
 Similarly with TABDUAL+, TABDUAL+int implementation consists of two stages:
-1. **Program transformation.** In this stage, your input program will be transformed into its corresponding output program that supports contextual abduction. The output program will be used in the next stage. Before you transform your input program, you can choose what mode of transformation you want to use using predicate `switch_mode/1`. TABDUAL+int provides four transformation modes, which are transformation without tabling (called no tabling mode), transformation with tabling (called normal tabling mode), transformation with tabling and answer subsumption (called tabling with answer subsumption mode), and transformation with tabling and interned term (called tabling with interned term mode).
+1. **Program transformation.** In this stage, your input program will be transformed into its corresponding output program that supports contextual abduction. The output program will be used in the next stage. Before you transform your input program, you can choose what mode of transformation you want to use using predicate `switch_mode/1`. TABDUAL+int provides four transformation modes, which are transformation without tabling (called no tabling mode), transformation with tabling (called normal tabling mode), transformation with tabling and answer subsumption (called tabling with answer subsumption mode), and transformation with tabling and interned terms (called tabling with interned terms mode).
 2. **Abduction.** In this stage, you may perform the abduction itself output program that is produced in the previous stage. Practically, you have to load the output program first, only then you can perform abduction by asking queries to the loaded program.
  
 ## Specifying Your Knowledge Base
@@ -33,9 +33,9 @@ Notice that this command may vary depends on how XSB is configured in your machi
 
 3. Type `[tabdual].` and then hit *Enter* to load the main program.
 
-4. Type `switch_mode(Mode).` to switch between modes. TABDUAL+int provides four available options of `Mode`: `n` (no tabling), `t` (normal tabling), `s` (tabling with answer subsumption), and `s` (tabling with interned term). Notice that in TABDUAL+int, the default mode is normal tabling mode. So, if you skip this step, you will automatically using normal tabling mode for transformation program.
+4. Type `switch_mode(Mode).` to switch between modes. TABDUAL+int provides four available options of `Mode`: `n` (no tabling), `t` (normal tabling), `s` (tabling with answer subsumption), and `s` (tabling with interned terms). Notice that in TABDUAL+int, the default mode is normal tabling mode. So, if you skip this step, you will automatically using normal tabling mode for transformation program.
 
-5. Type `transform({filename}).` and then hit *Enter* to transform your input program `{filename}.ab`.  The output program `{filename}_{InitialMode}.pl` will be created in `out` folder. For example, if you want to transform an input program `goodgrades.ab` using tabling with interned term mode, you have to type `transform(goodgrades)`, and consequently a file `goodgrades_int.pl` will be created in `out` folder. Remember that your input program `goodgrades.ab` must be placed inside `in` folder. To avoid errors in the next steps, please always perform this step even though the corresponding output program has been created. 
+5. Type `transform({filename}).` and then hit *Enter* to transform your input program `{filename}.ab`.  The output program `{filename}_{InitialMode}.pl` will be created in `out` folder. For example, if you want to transform an input program `goodgrades.ab` using tabling with interned terms mode, you have to type `transform(goodgrades)`, and consequently a file `goodgrades_int.pl` will be created in `out` folder. Remember that your input program `goodgrades.ab` must be placed inside `in` folder. To avoid errors in the next steps, please always perform this step even though the corresponding output program has been created. 
 
 6. Type `load({filename}).` and then hit *Enter* to load your output program.  For example, you have to type `load(goodgrades)`  to load the output program created in step number `4`. Make sure you have transformed the corresponding input program that you want to load, otherwise errors may occur.
 
@@ -47,7 +47,7 @@ Below are some examples of how you can interact with the program in XSB command 
     % compile and load the main program
 	?- [tabdual].                       
     
-	% switch into tabling with interned term mode
+	% switch into tabling with interned terms mode
 	?- switch_mode(i).                       
 	
     % transform the input program in/goodgrades.ab
