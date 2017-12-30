@@ -1,4 +1,3 @@
-:- import intern_term/2 from machine.
 p_ab([a1]).
 p_ab([a1,a2]).
 p_ab([a1,a2,a3]).
