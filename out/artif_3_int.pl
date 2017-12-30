@@ -88,4 +88,4 @@ a2_star(W1,X1) :-
 a3(Y1,Z1) :- 
     insert_abducible(a3,Y1,Z1).
 a3_star(A2,B2) :- 
-    insert_abducible(not a3,A2,B2).
+    insert_abducible(not a3,A2,B2). 
