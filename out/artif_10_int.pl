@@ -1,4 +1,3 @@
-:- import intern_term/2 from machine.
 q1_ab(A) :- 
     p([],A).
 :- table q1_ab/1 as intern.
