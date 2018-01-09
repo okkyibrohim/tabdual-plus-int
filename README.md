@@ -34,7 +34,7 @@ Notice that this command may vary depends on how XSB is configured in your machi
 
 3. Type `[tabdual].` and then hit *Enter* to load the main program.  
 
-4. Type `load({filename}).` and then hit *Enter* to load your output program.  For example, you have to type `load(goodgrades)`  to load the output program created in step number `4`. Make sure you have transformed the corresponding input program that you want to load, otherwise errors may occur.
+4. Type `load({filename}).` and then hit *Enter* to load your output program.  For example, you have to type `load(goodgrades)`  to load the output program `goodgrades_int.pl`. Make sure you have transformed the corresponding input program that you want to load, otherwise errors may occur.
 
 5. Now you may ask a query using predicate `ask/1` whose argument is the query you want to ask. If you want to retrieve the solution gradually, please use `ask/2` whose first argument is the query you want to ask, while the second is the solution to the query, retrieved one by one. If you want to supply abductive contexts, use predicate `ask/3` instead, whose second argument is a list of abductive contexts you want to supply, the first and the last arguments remain the same as `ask/2`. Please do not forget to use parentheses if you are asking multiple goals in the query.
 
