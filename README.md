@@ -17,8 +17,11 @@ With regard to properties mentioned above, your input program must be written in
 
 ## How TABDUAL+int Works
 TABDUAL+int implementation consists of two phases:
-1. **Program transformation.** In transformation phase, your input program will be transformed into its corresponding output program that supports contextual abduction. The output program will be used in the next stage. Before you transform your input program, you can choose what mode of transformation you want to use using predicate `switch_mode/1`. TABDUAL+int provides four transformation modes, which are no tabling, normal tabling, tabling with answer subsumption, and tabling with interned terms. Those program transformation respectively coded into n, t, s, and i. For example, if you want to using tabling with interned terms mode, you must switch mode using directive `switch_mode(i)`. Notice that in TABDUAL+int, the default mode is normal tabling mode. So, if you skip this step, you will automatically using normal tabling mode for transformation program.
-2. **Abduction.** In abduction phase, you may perform the abduction itself output program that is produced in the previous stage. Practically, you have to load the output program first, only then you can perform abduction by asking queries to the loaded program.
+1. **Program transformation.** 
+In transformation phase, your input program will be transformed into its corresponding output program that supports contextual abduction. The output program will be used in the next stage. Before you transform your input program, you can choose what mode of transformation you want to use using predicate `switch_mode/1`. TABDUAL+int provides four transformation modes, which are no tabling, normal tabling, tabling with answer subsumption, and tabling with interned terms. Those program transformation respectively coded into n, t, s, and i. For example, if you want to using tabling with interned terms mode, you must switch mode using directive `switch_mode(i)`. Notice that in TABDUAL+int, the default mode is normal tabling mode. So, if you skip this step, you will automatically using normal tabling mode for transformation program.
+To transform your input program `{filename}.ab`, type `transform({filename}).` and then hit *Enter*. The output program `{filename}_{InitialMode}.pl` will be created in `out` folder. For example, if you want to transform an input program `goodgrades.ab` using tabling with interned terms mode, you have to type `transform(goodgrades)`, and consequently a file `goodgrades_int.pl` will be created in `out` folder. Remember that your input program `goodgrades.ab` must be placed inside `in` folder. To avoid errors in the next steps, please always perform this step even though the corresponding output program has been created.
+2. **Abduction.** 
+In abduction phase, you may perform the abduction itself output program that is produced in the previous stage. Practically, you have to load the output program first, only then you can perform abduction by asking queries to the loaded program.
  
 ## How to Use
 1. Open a terminal in the directory where you have this implementation.
@@ -29,13 +32,11 @@ $ xsb
 ```
 Notice that this command may vary depends on how XSB is configured in your machine. Make sure you have entered XSB prompt level (indentified by `| ?-` prompt) before you proceed to the next step.
 
-3. Type `[tabdual].` and then hit *Enter* to load the main program.
+3. Type `[tabdual].` and then hit *Enter* to load the main program.  
 
-4. Type `transform({filename}).` and then hit *Enter* to transform your input program `{filename}.ab`.  The output program `{filename}_{InitialMode}.pl` will be created in `out` folder. For example, if you want to transform an input program `goodgrades.ab` using tabling with interned terms mode, you have to type `transform(goodgrades)`, and consequently a file `goodgrades_int.pl` will be created in `out` folder. Remember that your input program `goodgrades.ab` must be placed inside `in` folder. To avoid errors in the next steps, please always perform this step even though the corresponding output program has been created. 
+4. Type `load({filename}).` and then hit *Enter* to load your output program.  For example, you have to type `load(goodgrades)`  to load the output program created in step number `4`. Make sure you have transformed the corresponding input program that you want to load, otherwise errors may occur.
 
-5. Type `load({filename}).` and then hit *Enter* to load your output program.  For example, you have to type `load(goodgrades)`  to load the output program created in step number `4`. Make sure you have transformed the corresponding input program that you want to load, otherwise errors may occur.
-
-6. Now you may ask a query using predicate `ask/1` whose argument is the query you want to ask. If you want to retrieve the solution gradually, please use `ask/2` whose first argument is the query you want to ask, while the second is the solution to the query, retrieved one by one. If you want to supply abductive contexts, use predicate `ask/3` instead, whose second argument is a list of abductive contexts you want to supply, the first and the last arguments remain the same as `ask/2`. Please do not forget to use parentheses if you are asking multiple goals in the query.
+5. Now you may ask a query using predicate `ask/1` whose argument is the query you want to ask. If you want to retrieve the solution gradually, please use `ask/2` whose first argument is the query you want to ask, while the second is the solution to the query, retrieved one by one. If you want to supply abductive contexts, use predicate `ask/3` instead, whose second argument is a list of abductive contexts you want to supply, the first and the last arguments remain the same as `ask/2`. Please do not forget to use parentheses if you are asking multiple goals in the query.
 
 Please take a look at `in` folder for examples.
 ## Examples
