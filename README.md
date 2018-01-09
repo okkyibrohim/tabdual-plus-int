@@ -3,12 +3,7 @@
 ## About TABDUAL+int
 TABDUAL+int is an improvement of TABDUAL+ (see https://github.com/harventhy/tabdual-plus) by adding an advance feature tabling which is tabling with interned terms. TABDUAL+int is implemented in XSB Prolog, so you need to be installed XSB Prolog in your machine. For convenience, you might want to put the path to directory where the XSB command is found in your `$PATH` environment variable. Otherwise, you have to include the path to directory where you have this implementation into XSB default search paths using predicate `library_directory/1`.
 
-## How This Works
-Similarly with TABDUAL+, TABDUAL+int implementation consists of two stages:
-1. **Program transformation.** In this stage, your input program will be transformed into its corresponding output program that supports contextual abduction. The output program will be used in the next stage. Before you transform your input program, you can choose what mode of transformation you want to use using predicate `switch_mode/1`. TABDUAL+int provides four transformation modes, which are transformation without tabling (called no tabling mode), transformation with tabling (called normal tabling mode), transformation with tabling and answer subsumption (called tabling with answer subsumption mode), and transformation with tabling and interned terms (called tabling with interned terms mode).
-2. **Abduction.** In this stage, you may perform the abduction itself output program that is produced in the previous stage. Practically, you have to load the output program first, only then you can perform abduction by asking queries to the loaded program.
- 
-## Specifying Your Knowledge Base
+## How to Specify Your Knowledge Base
 You can define an input program, i.e. a logic program, as your own knowledge base inside `in` folder in a file called `{filename}.ab`. Your input program has to satisfy following properties:
 * *Abducibles* is specified by predicate `abds/1` whose argument is a list of abducibles along with its arity. For example `abds([a/1, b/2, c/3])`.
 * To define a rule (including an *integrity constraint*), please use `<-` instead of `:-` to denote *if* operator. For example, please use `H <- X, Y.` instead of using `H :- X, Y.`.
@@ -20,6 +15,11 @@ With regard to properties mentioned above, your input program must be written in
 2. Abducibles.
 3. Rules.
 
+## How TABDUAL+int Works
+Similarly with TABDUAL+, TABDUAL+int implementation consists of two stages:
+1. **Program transformation.** In this stage, your input program will be transformed into its corresponding output program that supports contextual abduction. The output program will be used in the next stage. Before you transform your input program, you can choose what mode of transformation you want to use using predicate `switch_mode/1`. TABDUAL+int provides four transformation modes, which are transformation without tabling (called no tabling mode), transformation with tabling (called normal tabling mode), transformation with tabling and answer subsumption (called tabling with answer subsumption mode), and transformation with tabling and interned terms (called tabling with interned terms mode).
+2. **Abduction.** In this stage, you may perform the abduction itself output program that is produced in the previous stage. Practically, you have to load the output program first, only then you can perform abduction by asking queries to the loaded program.
+ 
 Please take a look at `in` folder for examples.
 
 ## How to Use
