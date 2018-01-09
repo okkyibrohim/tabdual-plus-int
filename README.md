@@ -20,8 +20,6 @@ Similarly with TABDUAL+, TABDUAL+int implementation consists of two stages:
 1. **Program transformation.** In this stage, your input program will be transformed into its corresponding output program that supports contextual abduction. The output program will be used in the next stage. Before you transform your input program, you can choose what mode of transformation you want to use using predicate `switch_mode/1`. TABDUAL+int provides four transformation modes, which are transformation without tabling (called no tabling mode), transformation with tabling (called normal tabling mode), transformation with tabling and answer subsumption (called tabling with answer subsumption mode), and transformation with tabling and interned terms (called tabling with interned terms mode).
 2. **Abduction.** In this stage, you may perform the abduction itself output program that is produced in the previous stage. Practically, you have to load the output program first, only then you can perform abduction by asking queries to the loaded program.
  
-Please take a look at `in` folder for examples.
-
 ## How to Use
 1. Open a terminal in the directory where you have this implementation.
 
@@ -41,6 +39,7 @@ Notice that this command may vary depends on how XSB is configured in your machi
 
 7. Now you may ask a query using predicate `ask/1` whose argument is the query you want to ask. If you want to retrieve the solution gradually, please use `ask/2` whose first argument is the query you want to ask, while the second is the solution to the query, retrieved one by one. If you want to supply abductive contexts, use predicate `ask/3` instead, whose second argument is a list of abductive contexts you want to supply, the first and the last arguments remain the same as `ask/2`. Please do not forget to use parentheses if you are asking multiple goals in the query.
 
+Please take a look at `in` folder for examples.
 ## Examples
 Below are some examples of how you can interact with the program in XSB command prompt. These examples will use `in/goodgrades.ab` as its input program.
 
