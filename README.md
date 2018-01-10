@@ -39,7 +39,7 @@ Notice that this command may vary depends on how XSB is configured in your machi
 5. Now you may ask a query using predicate `ask/1` whose argument is the query you want to ask. If you want to retrieve the solution gradually, please use `ask/2` whose first argument is the query you want to ask, while the second is the solution to the query, retrieved one by one. If you want to supply abductive contexts, use predicate `ask/3` instead, whose second argument is a list of abductive contexts you want to supply, the first and the last arguments remain the same as `ask/2`. Please do not forget to use parentheses if you are asking multiple goals in the query. Here are some example of usage predicate `ask/1`, `ask/2`, and `ask/3`. These examples will use `in/goodgrades.ab` as its input program.
 
     	% using ask/1
-	?- ask(getting_good_grades)).                       
+	`?- ask(getting_good_grades)).`                       
     	(1) [getting_lucky,healthy]
 	(2) [have_study_notes]
     	yes
