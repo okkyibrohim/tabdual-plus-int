@@ -60,4 +60,4 @@ Notice that this command may vary depends on how XSB is configured in your machi
 	?- ask(q(1), [not a(1)], O).        
     	O = [not have_study_notes,getting_lucky,healthy];
     	no
-    
+`    
