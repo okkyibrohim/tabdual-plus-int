@@ -1,5 +1,4 @@
-# TABDUAL+int : 
-An Improvement of TABDUAL+ by adding Interned Terms
+# TABDUAL+int : An Improvement of TABDUAL+ by Adding Interned Terms
 
 ## About TABDUAL+int
 TABDUAL+int is an improvement of TABDUAL+ (see https://github.com/harventhy/tabdual-plus) by adding an advance feature tabling which is tabling with interned terms. TABDUAL+int is implemented in XSB Prolog, so you need to install XSB Prolog in your machine. For convenience, you might want to put the path to directory where the XSB command is found in your `$PATH` environment variable. Otherwise, you have to include the path to directory where you have this implementation into XSB default search paths using predicate `library_directory/1`.
