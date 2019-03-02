@@ -64,4 +64,4 @@ Notice that this command may vary depends on how XSB is configured in your machi
 ## Citation
 You are free to use and improve the TABDUAL+int, but if you want to publish paper/publication using the TABDUAL+int, please cite this publication:
 
-**M. O. Ibrohim and A. Saptawijaya, “Tabling with Interned Terms On Contextual Abduction”, Jurnal Ilmu Komputer dan Informasi, vol. 12(1), 2019.** (to be published in February 2019)
+**M. O. Ibrohim and A. Saptawijaya, “Tabling with Interned Terms On Contextual Abduction”, Jurnal Ilmu Komputer dan Informasi, vol. 12(1), pp. 1-11, 2019.** (full paper: http://jiki.cs.ui.ac.id/index.php/jiki/article/view/569/404)
