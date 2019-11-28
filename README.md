@@ -62,7 +62,7 @@ Notice that this command may vary depends on how XSB is configured in your machi
     	`no`
 
 ## More detail
-If you want to know more how this program work including the experiment results, you can read our paper in here:http://jiki.cs.ui.ac.id/index.php/jiki/article/view/569/404.
+If you want to know more how this program work including the experiment results, you can read our paper in here: http://jiki.cs.ui.ac.id/index.php/jiki/article/view/569/404.
 
 ## How to cite us
 You are free to use and improve the TABDUAL+int, but if you want to publish paper/publication using the TABDUAL+int, please cite this publication:
