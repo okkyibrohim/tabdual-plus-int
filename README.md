@@ -61,10 +61,13 @@ Notice that this command may vary depends on how XSB is configured in your machi
     	`O = [not have_study_notes,getting_lucky,healthy];`<br />
     	`no`
 
-## Citation
+## More detail
+If you want to know more how this program work including the experiment results, you can read our paper in here:http://jiki.cs.ui.ac.id/index.php/jiki/article/view/569/404.
+
+## How to cite us
 You are free to use and improve the TABDUAL+int, but if you want to publish paper/publication using the TABDUAL+int, please cite this publication:
 
-**M. O. Ibrohim and A. Saptawijaya, “Tabling with Interned Terms On Contextual Abduction”, Jurnal Ilmu Komputer dan Informasi, vol. 12(1), pp. 1-11, 2019.** (full paper: http://jiki.cs.ui.ac.id/index.php/jiki/article/view/569/404)
+**M. O. Ibrohim and A. Saptawijaya, “Tabling with Interned Terms On Contextual Abduction”, Jurnal Ilmu Komputer dan Informasi, vol. 12(1), pp. 1-11, 2019.** (Every paper template may have different citation writting. For LaTex user, you can see **citation.bib**).
 
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
